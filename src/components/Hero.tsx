@@ -13,7 +13,7 @@ const Hero = () => {
           Full Stack Developer
         </h2>
         <p className="text-lg text-gray-600 mb-8 max-w-lg">
-          Full Stack Developer with 4.5+ years of experience building scalable applications, APIs, cloud integrations, and database solutions. Proficient in full SDLC, agile methodologies, and secure data architectures.
+        Full Stack Developer with more than 4.5 years of web application development experience and an unwavering commitment to quality control and a strong work culture. Skilled in front-end and back-end technologies, contributing effectively to every phase of the Software Development Lifecycle (SDLC). Proficient in building Windows services, APIs, microservices, cloud integrations, third-party service integrations, event-based systems, and database integrations. Experienced with DevOps practices, CI/CD pipelines, authentication and authorization services, message queues, and secure data transformations.
         </p>
         <div className="flex space-x-4">
           <a 
