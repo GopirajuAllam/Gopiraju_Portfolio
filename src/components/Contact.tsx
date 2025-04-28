@@ -4,7 +4,7 @@ import profileImage from '../assets/profile.jpg';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 
 // Initialize EmailJS
-emailjs.init("jP-zrMJC2tPPk5Vus"); // Replace with your actual public key
+emailjs.init("jP-zrMJC2tPPk5Vus");
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,37 +14,47 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setIsLoading(true);
     
     try {
+      console.log('Sending email with data:', {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        time: new Date().toLocaleString(),
+      });
+
       const result = await emailjs.send(
-        'service_c0gmjms', // Replace with your EmailJS service ID
-        'Gmail',
+        'service_c0gmjms',
+        'template_1pmzfy8',
         {
           name: formData.name,
-          from_name: formData.name,
-          from_email: formData.email,
-          to_name: 'Gopiraju Allam',
-          reply_to: formData.email,
+          email: formData.email,
           message: formData.message,
           time: new Date().toLocaleString(),
         }
       );
       
+      console.log('EmailJS Response:', result);
+      
       if (result.status === 200) {
         setIsSubmitted(true);
         setTimeout(() => {
           setFormData({ name: '', email: '', message: '' });
-        }, 3000); // Clear form after 3 seconds
+        }, 3000);
       } else {
-        throw new Error('Failed to send message');
+        throw new Error(`Failed to send message: Status ${result.status}`);
       }
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Detailed error:', error);
       setError('There was an error sending your message. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -55,7 +65,6 @@ const Contact = () => {
     }));
   };
 
-  // Reset submission status after 5 seconds
   useEffect(() => {
     if (isSubmitted) {
       const timer = setTimeout(() => {
@@ -99,8 +108,14 @@ const Contact = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-              {error}
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded flex items-center gap-2">
+              <div className="flex-1">{error}</div>
+              <button 
+                onClick={() => setError('')}
+                className="text-red-700 hover:text-red-900"
+              >
+                ×
+              </button>
             </div>
           )}
           <div>
@@ -151,10 +166,10 @@ const Contact = () => {
           <button
             type="submit"
             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors flex items-center gap-2"
-            disabled={isSubmitted}
+            disabled={isLoading || isSubmitted}
           >
-            {isSubmitted ? 'Message Sent' : 'Send Message'}
-            <Send size={18} />
+            {isLoading ? 'Sending...' : isSubmitted ? 'Message Sent' : 'Send Message'}
+            <Send size={18} className={isLoading ? 'animate-pulse' : ''} />
           </button>
         </form>
       </div>
