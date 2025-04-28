@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  input, textarea {
+    @apply border-gray-300 rounded-md shadow-sm;
+  }
+  
+  input:focus, textarea:focus {
+    @apply ring-2 ring-blue-500 border-blue-500;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.profile-image {
+  @apply rounded-full object-cover shadow-lg;
+}
