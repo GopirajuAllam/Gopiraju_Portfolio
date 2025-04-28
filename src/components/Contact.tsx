@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import profileImage from '../assets/profile.jpg';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 
 // Initialize EmailJS
 emailjs.init("jP-zrMJC2tPPk5Vus"); // Replace with your actual public key
@@ -22,7 +22,7 @@ const Contact = () => {
     try {
       const result = await emailjs.send(
         'service_c0gmjms', // Replace with your EmailJS service ID
-        'template_1pmzfy8', // Replace with your EmailJS template ID
+        'Gmail',
         {
           name: formData.name,
           from_name: formData.name,
@@ -36,7 +36,9 @@ const Contact = () => {
       
       if (result.status === 200) {
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => {
+          setFormData({ name: '', email: '', message: '' });
+        }, 3000); // Clear form after 3 seconds
       } else {
         throw new Error('Failed to send message');
       }
@@ -52,6 +54,16 @@ const Contact = () => {
       [e.target.name]: e.target.value
     }));
   };
+
+  // Reset submission status after 5 seconds
+  useEffect(() => {
+    if (isSubmitted) {
+      const timer = setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [isSubmitted]);
 
   return (
     <section id="contact" className="py-20">
@@ -72,71 +84,79 @@ const Contact = () => {
           </div>
         </div>
 
-        {isSubmitted ? (
-          <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-            Thank you for your message! I will get in touch with you soon.
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {error && (
-              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                {error}
+        {/* Success Message */}
+        {isSubmitted && (
+          <div className="mb-6 transform transition-all duration-500 ease-in-out">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
+              <CheckCircle className="text-green-500" size={24} />
+              <div>
+                <h4 className="text-green-800 font-medium">Message Sent Successfully!</h4>
+                <p className="text-green-600 text-sm">Thank you for reaching out. I'll get back to you soon.</p>
               </div>
-            )}
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              />
             </div>
-            
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              />
-            </div>
-            
-            <button
-              type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors flex items-center gap-2"
-            >
-              Send Message
-              <Send size={18} />
-            </button>
-          </form>
+          </div>
         )}
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+              {error}
+            </div>
+          )}
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+          
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+          
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows={4}
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+          
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors flex items-center gap-2"
+            disabled={isSubmitted}
+          >
+            {isSubmitted ? 'Message Sent' : 'Send Message'}
+            <Send size={18} />
+          </button>
+        </form>
       </div>
     </section>
   );
