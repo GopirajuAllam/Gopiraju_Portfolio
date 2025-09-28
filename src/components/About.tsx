@@ -6,17 +6,17 @@ const About = () => {
     { 
       name: 'Frontend Development', 
       icon: <Layout className="text-blue-600" size={24} />, 
-      description: 'Expertise in Angular, React.js, TypeScript, and responsive design with modern frameworks.' 
+      description: 'Expertise in Angular, React.js, Vue.js, TypeScript, and responsive design with modern frameworks.' 
     },
     { 
       name: 'Backend Development', 
       icon: <Server className="text-blue-600" size={24} />, 
-      description: 'Proficient in .NET Core, ASP.NET MVC, Spring Boot, and building secure REST APIs.' 
+      description: 'Proficient in Java, Python, Spring Boot, and building secure REST APIs.' 
     },
     { 
       name: 'Database Management', 
       icon: <Database className="text-blue-600" size={24} />, 
-      description: 'Experience with SQL Server, PostgreSQL, MySQL, Redis, and MongoDB.' 
+      description: 'Experience with Oracel, SQL Server, PostgreSQL, MySQL, Redis, and MongoDB.' 
     },
     { 
       name: 'Cloud & DevOps', 
@@ -42,7 +42,7 @@ const About = () => {
               and best practices, focusing on security, performance, and user experience.
             </p>
             <p className="text-lg text-gray-700">
-              I'm certified in Azure Fundamentals and Agile Software Development, constantly learning and adapting to new technologies
+              I'm certified in AWS Developer Associate and Agile Software Development, constantly learning and adapting to new technologies
               and methodologies in the ever-evolving tech landscape.
             </p>
           </div>

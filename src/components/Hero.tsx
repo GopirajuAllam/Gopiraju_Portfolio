@@ -1,19 +1,19 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import profileImage from '../assets/profile.jpg';
+import profileImage from '../assets/Favicon.png';
 
 const Hero = () => {
   return (
     <section className="py-20 md:py-32 flex flex-col md:flex-row items-center justify-between">
       <div className="md:w-1/2 mb-10 md:mb-0">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Hi, I'm <span className="text-blue-600">Gopiraju Allam</span>
+          Hi there, I'm <span className="text-blue-600">Gopiraju Allam</span>
         </h1>
         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700">
           Full Stack Developer
         </h2>
         <p className="text-lg text-gray-600 mb-8 max-w-lg">
-        Full Stack Developer with more than 4.5 years of web application development experience and an unwavering commitment to quality control and a strong work culture. Skilled in front-end and back-end technologies, contributing effectively to every phase of the Software Development Lifecycle (SDLC). Proficient in building Windows services, APIs, microservices, cloud integrations, third-party service integrations, event-based systems, and database integrations. Experienced with DevOps practices, CI/CD pipelines, authentication and authorization services, message queues, and secure data transformations.
+        Full stack software engineer with over 4+ years of experience, specialized in creating and implementing cloud-native, scalable apps that integrate AI and ML. proficiency in building data-intensive Python,Java, Node.js backends, responsive frontends, and AWS microservice architectures. demonstrated capacity to oversee the entire development process, from MLOps and production deployment to system design and data pipeline engineering. Proficient in building Windows services, APIs, microservices, cloud integrations, third-party service integrations, event-based systems, and database integrations. Experienced with DevOps practices, CI/CD pipelines, authentication and authorization services, message queues, and secure data transformations.
         </p>
         <div className="flex space-x-4">
           <a 
@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
           <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-full shadow-lg">
             <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold">
-              4.5+ yrs
+              4+ yrs
             </div>
           </div>
         </div>

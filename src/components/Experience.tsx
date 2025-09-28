@@ -7,18 +7,15 @@ const Experience = () => {
       title: 'Application Developer',
       company: 'Texas Tech University',
       location: 'Lubbock, Texas',
-      period: 'Present',
+      period: 'Jan 2024 - May 2025',
       description: [
-      'Contributed to developing internal web applications using ASP.NET Core, Angular, JavaScript, and HTML; Utilized Entity Framework for performing CRUD operations over SQL Server databases' ,
-      'Designed and implemented an SSIS package to automate ETL processes for CSV and Excel flat files, improving operational efficiency by 20\% through streamlined data cleansing, filtering, and aggregation',
-      'Improved database performance by normalizing tables and implementing stored procedures for efficient data retrieval',
-      'Developed and implemented OAuth 2.0 authentication and authorization, ensuring application security',
-      'Created HTML helper classes to modularize view rendering, simplifying front-end development',
-      'Assisted in deploying applications to IIS and managing client certificates for secure communication',
-      'Integrated the TouchNet payment gateway, enabling secure and seamless payment processing for users',
-      'Implemented robust forms authentication to safeguard the application against unauthorized access',
+      '• Architected and launched a full-stack academic portal for 45,000+ students. The new system handled 10,000+ concurrent users during peak registration, improving page load times by 50% over the legacy platform.', 'Developed fault-tolerant Java microservices, containerized with Docker and orchestrated on AWS EKS', 
+'Engineered responsive UI dashboards with Angular, HTML5, and CSS3 for real-time student performance.', 'Automated 20+ ETL jobs using Python and Apache Airflow, eliminating 15 hours of manual data processing per week and improving data refresh frequency from weekly to daily.',  'Designed CI/CD pipelines using GitHub Actions, with support for automated rollback and versioning.',
+'Delivered reporting tools using Python (Pandas/Matplotlib), replacing Excel VBA-based analyzztics',
+'Implemented Infrastructure as Code using Ansible, reducing the time to provision new development environments',
+'Conducted system profiling and fine-tuned Java-based APIs for millisecond-level latency under production load',
       ],
-      technologies: ['ASP.NET Core', 'Angular', 'SQL Server', 'OAuth 2.0', 'SSIS']
+      technologies: ['Java', 'Spring Boot', 'SQL Server', 'OAuth 2.0', 'AWS', 'Python', 'ETL']
     },
     {
       title: 'Associate Consultant',
@@ -26,18 +23,9 @@ const Experience = () => {
       location: 'Hyderabad',
       period: 'Oct 2020 - Dec 2023',
       description: [
-       'Designed and implemented a single-page reporting and dashboard application using ASP.NET Core and Angular',
-      'Developed ASP.NET Web APIs providing RESTful services secured by JWT-based authentication',
-      'Created stored procedures, triggers, and views in MS SQL Server to handle data manipulation and enforce business rules',
-      'Built SSRS packages to automate detailed report generation, significantly improving reporting efficiency',
-      'Integrated an ASP.NET MVC application with Azure Functions via Azure Service Bus Queues for seamless backend processing',
-      'Developed a scheduled console application using ASP.NET, Task Scheduler, and FTP integration, optimizing file processing workflows',
-      'Built responsive web applications using ASP.NET MVC, HTML, CSS, JavaScript, and SQL',
-      'Improved landing page performance by 30\% by leveraging asynchronous programming and Ajax',
-      'Developed a Windows Service for address standardization using the SmartyStreet API, enhancing data quality',
-      'Deployed a WebJob in Azure to reliably process Service Bus queue records, improving system efficiency',
+       'Delivered scalable insurance platforms for PnL and Auto line of business, improving claims processing and policy management efficiency used by 10 Million+ customers.', 'Architected and developed high-availability insurance portals using Java and J2EE frameworks including Servlets, JSP, JDBC and SQL Server for enterprise insurance clients.', 'Developed a suite of 25+ RESTful microservices in Java, which served as the backbone for the new platform and improved system modularity, allowing for independent team development and deployment.', 'Implemented robust security controls using session management and OAuth 2.0, successfully eliminating 100% of previously identified OWASP Top 10 vulnerabilities in penetration testing.', 'Designed and deployed web applications in containerized environments using Docker and Kubernetes, ensuring consistent runtime behavior across development, staging, and production.', 'Designed and optimized SQL and NoSQL databases to support real-time reporting and large-scale data ingestion.','Automated REST API and UI testing using REST Assured and Selenium to ensuring no pre-deployement bugs.','Applied design patterns such as Singleton, Factory, and DAO to promote code reusability and maintainability.','Led cross-functional design sessions, conducted peer code reviews, and continuously improved engineering processes.','Contributed to migrating legacy systems monolithic Java applications towards microservice-based architectures.',
       ],
-      technologies: ['ASP.NET MVC', 'Azure', 'REST APIs', 'JWT', 'Angular']
+      technologies: ['Java', 'AWS', 'No SQL', 'Spring', 'Angular', 'Docker', 'Kubernetes']
     }
   ];
 
