@@ -5,8 +5,8 @@ import profileImage from '../assets/profile.jpg';
 
 const Hero = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center py-20">
-      <div className="flex flex-col md:flex-row items-center justify-between w-full">
+    <section id="hero" className="min-h-screen flex items-center justify-center py-20 px-4 md:px-8">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between w-full">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -76,7 +76,7 @@ const Hero = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="md:w-1/2 flex justify-center relative"
+          className="md:w-1/2 flex justify-center relative z-10"
         >
           <div className="relative w-80 h-80 md:w-96 md:h-96">
             <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full blur-3xl opacity-20 animate-pulse" />
@@ -120,7 +120,7 @@ const Hero = () => {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400">Projects</p>
-                  <p className="text-lg font-bold text-white">20+ Done</p>
+                  <p className="text-lg font-bold text-white">5+ Done</p>
                 </div>
               </div>
             </motion.div>
