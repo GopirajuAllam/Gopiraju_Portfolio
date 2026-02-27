@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Senior Engineer',
-      company: 'PeaceHealth',
+      title: 'Software Engineer',
+      company: 'CVS Health',
       location: 'Remote, Texas',
-      period: 'June 2024 - Present',
+      period: 'July 2025 - Present',
       description: [
         'Designed and deployed ASP.NET Core microservices for appointment scheduling, patient record management, and virtual consultations, resulting in a 30% improvement in API throughput.',
         'Developed interactive Pharmacy Benefit Manager (PBM) dashboards using Angular 14, React.js, Bootstrap, and TypeScript, enabling real-time visualization of hospital KPIs.',
@@ -22,6 +22,23 @@ const Experience = () => {
         'Developed unit and integration tests using xUnit and Moq for .NET APIs, and Jasmine/Karma for Angular components, achieving 85%+ test coverage.'
       ],
       technologies: ['ASP.NET Core', 'Angular 14', 'React.js', 'Azure DevOps', 'Redis', 'SSIS']
+    },
+
+    {
+      title: 'Application Developer',
+      company: 'Texas Tech University',
+      location: 'Remote, Lubbock',
+      period: 'Jan 2024 - May 2025',
+      description: [
+        'Migrated Groovy-Grails applications to modern .NET Core and C#, Angular, React.JS deploying the solution on AWS and implementing REST and gRPC services for efficient communication across faculty and student-facing systems.',
+        'Developed and consumed ASP.NET Web APIs using Entity Framework ORM and LINQ to implement business logic, validation rules, transactional operations, optimized queries, and stored procedures to ensure performance & data integrity.',
+        'Automated ETL workflows using SSIS to import and clean data from CSV/Excel, reducing manual work by 20%.',
+        'Improved SQL Server performance by normalizing database schema and optimizing stored procedures.',
+        'Integrated ACH payment gateway and configured IIS and Azure resources VNETs, security zones to support enterprise-grade transaction processing along with settlements during course registrations.',
+        'Automated ETL workflows using SSIS to import and clean data from CSV/Excel, reducing manual work by 20%.',
+        'Used Git-based version control GitHub for source code management, branching, code reviews, and CI/CD integration.',
+
+      ], technologies: ['ASP.NET Core, C#', 'Angular', 'React.js', 'Azure DevOps', 'LINQ', 'ORM', 'Entity Framework']
     },
     {
       title: 'Associate Consultant',
@@ -39,23 +56,9 @@ const Experience = () => {
         'Worked with Kafka and Elastic Stack for log aggregation and real-time data streaming for claims processing.',
         'Implemented TypeScript in Angular applications for type safety and better code maintenance.'
       ],
-      technologies: ['ASP.NET Core', 'GraphQL', 'Docker', 'Kubernetes', 'AWS', 'Kafka']
+      technologies: ['ASP.NET Core, C#', 'GraphQL', 'Docker', 'Kubernetes', 'AWS', 'Kafka']
     },
-    {
-      title: 'Full Stack .NET Developer',
-      company: 'ICICI Bank',
-      location: 'Remote, India',
-      period: 'July 2019 - June 2020',
-      description: [
-        'Developed multi-tenant SaaS insurance platforms using ASP.NET, C#, Oracle servers and AWS cloud services.',
-        'Developed real-time, responsive web applications using Blazor WebAssembly with SignalR and .NET Core.',
-        'Designed and optimized PL/SQL and MongoDB (NoSQL) databases to handle high-volume banking transactions.',
-        'Integrated Active Directory, SSO, SAML, JWT and OAuth for secure authentication across distributed systems.',
-        'Used AWS CloudWatch and Serilog for custom dashboards, monitoring application health and performance.',
-        'Used SQL Server Reporting Services (SSRS) for generating various invoices and cover pages.'
-      ],
-      technologies: ['ASP.NET', 'Blazor', 'SignalR', 'Oracle', 'AWS', 'MongoDB']
-    }
+
   ];
 
   return (

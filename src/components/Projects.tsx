@@ -13,11 +13,11 @@ const Projects = () => {
       liveLink: '#'
     },
     {
-      title: 'Insurance & Billing Microservices',
-      description: 'Scalable microservices architecture for insurance, billing, and order management, processing 5K+ requests/min.',
+      title: 'Voice to Emotion Detection ',
+      description: 'This application detects emotions from speech using machine learning techniques. It provides a beautiful user interface for recording audio, uploading audio files, and visualizing the detected emotions.',
       image: 'https://images.pexels.com/photos/45189/pexels-photo-45189.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      technologies: ['ASP.NET Core', 'Docker', 'Kubernetes', 'Azure'],
-      githubLink: 'https://github.com/GopirajuAllam',
+      technologies: ['Python', 'Flask', 'Node.js ', 'Librosa', 'Scikit-learn', 'Machine Learining'],
+      githubLink: 'https://github.com/GopirajuAllam/VoiceEmoAI',
       liveLink: '#'
     },
     {
