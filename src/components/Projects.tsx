@@ -9,7 +9,7 @@ const Projects = () => {
       description: 'Interactive dashboards for real-time visualization of hospital KPIs, enhancing decision-making for administrators.',
       image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       technologies: ['Angular 14', 'React.js', 'TypeScript', 'Bootstrap'],
-      githubLink: 'https://github.com/GopirajuAllam',
+      githubLink: 'https://github.com/GopirajuAllam/Pharmacy-Benefit-Manager-Dashboard',
       liveLink: '#'
     },
     {
@@ -33,7 +33,7 @@ const Projects = () => {
       description: 'Multi-tenant insurance platform handling high-volume banking transactions with secure authentication.',
       image: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       technologies: ['ASP.NET', 'Oracle', 'AWS', 'OAuth 2.0'],
-      githubLink: 'https://github.com/GopirajuAllam',
+      githubLink: 'https://github.com/GopirajuAllam/Insurance',
       liveLink: '#'
     }
   ];
